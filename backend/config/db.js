@@ -9,7 +9,6 @@ export const connectUsingMongoose = async () => {
       useUnifiedTopology: true,
     });
     console.log("Mongodb using mongoose is connected ");
-    addCategories();
   } catch (err) {
     console.log(err);
   }
