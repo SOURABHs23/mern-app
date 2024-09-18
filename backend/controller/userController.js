@@ -28,4 +28,26 @@ router.get("/", async (req, res) => {
   }
 });
 
+//GET SINGLE USER
+router.get("/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const singleUser = await userData.findById({ _id: id });
+    res.status(200).json(singleUser);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+//DELETE
+router.delete("/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const deletedUser = await userData.findByIdAndDelete({ _id: id });
+    res.status(201).json(deletedUser);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
 export default router;
