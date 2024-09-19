@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
   const [name, setName] = useState("");
@@ -7,7 +7,7 @@ const Create = () => {
   const [about, setAbout] = useState("");
   const [error, setError] = useState("");
 
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
 console.log(name,email,about);
 
   const handleSubmit = async (e) => {
@@ -35,7 +35,7 @@ console.log(name,email,about);
       setEmail("");
       setAbout("");
       setError("");
-    //   navigate("/read");
+      navigate("/all");
     }
   };
 
