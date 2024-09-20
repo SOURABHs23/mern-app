@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/all">
           MERN
         </a>
         <button
@@ -23,12 +23,12 @@ const Navbar = () => {
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link to="/" className="nav-link">
-                Create Post
+                Create Card
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/all" className="nav-link" >
-                AllPost
+                All Card
               </Link>
             </li>
           </ul>

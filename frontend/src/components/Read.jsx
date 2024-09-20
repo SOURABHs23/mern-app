@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Read = () => {
   const [data, setData] = useState();
@@ -56,8 +57,8 @@ const Read = () => {
                 <h5 className="card-title">{ele.name}</h5>
                 <h6 className="card-subtitle mb-2 text-muted">{ele.email}</h6>
                 <p className="card-text">{ele.about}</p>
-                <span className="card-link">Edit</span>
-                <span className="card-link" onClick={() => handleDelete(ele._id)}>
+                <Link to= {`/${ele._id}`} className="btn btn-primary card-link">Edit</Link>
+                <span className="btn btn-danger card-link" onClick={() => handleDelete(ele._id)}>
                   Delete
                 </span>
               </div>
