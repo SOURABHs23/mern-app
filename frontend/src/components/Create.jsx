@@ -15,7 +15,7 @@ console.log(name,email,about);
     var addUser = { name, email, about };
     console.log(addUser);
 
-    const response = await fetch("http://localhost:5000/", {
+    const response = await fetch("https://mern-app-1pis.onrender.com/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
