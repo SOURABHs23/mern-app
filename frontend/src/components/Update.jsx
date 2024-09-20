@@ -40,7 +40,7 @@ const Update = () => {
     if (response.ok) {
       console.log("updated result..", result);
       setError("");
-      navigate("/all");
+      navigate("/");
     }
     if (!response.ok) {
       console.log(response.error);
