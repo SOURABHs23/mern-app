@@ -8,6 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(router);
+console.log("ho");
 
 app.listen(5000, () => {
   console.log("server is running on 5000");
