@@ -8,7 +8,7 @@ const Read = () => {
 
 
   async function handleDelete(id) {
-    const response = await fetch(`http://localhost:5000/${id}`, {
+    const response = await fetch(`https://mern-app-1pis.onrender.com/${id}`, {
       method: "DELETE",
     });
     const result1 = await response.json();
@@ -26,7 +26,7 @@ const Read = () => {
   }
 
   async function getData() {
-    const response = await fetch("http://localhost:5000");
+    const response = await fetch("https://mern-app-1pis.onrender.com/");
     const result = await response.json();
     console.log("result..", result);
     if (!response.ok) {
