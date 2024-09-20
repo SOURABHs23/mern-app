@@ -35,7 +35,7 @@ console.log(name,email,about);
       setEmail("");
       setAbout("");
       setError("");
-      navigate("/all");
+      navigate("/");
     }
   };
 
