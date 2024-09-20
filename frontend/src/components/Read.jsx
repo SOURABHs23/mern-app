@@ -5,8 +5,6 @@ const Read = () => {
   const [data, setData] = useState();
   const [error, setError] = useState();
 
-
-
   async function handleDelete(id) {
     const response = await fetch(`https://mern-app-1pis.onrender.com/${id}`, {
       method: "DELETE",
@@ -26,7 +24,7 @@ const Read = () => {
   }
 
   async function getData() {
-    const response = await fetch("https://mern-app-1pis.onrender.com/");
+    const response = await fetch("https://mern-app-1pis.onrender.com");
     const result = await response.json();
     console.log("result..", result);
     if (!response.ok) {
@@ -34,33 +32,38 @@ const Read = () => {
     }
 
     if (response.ok) {
-    //   console.log(response.ok);
       setData(result);
       setError("");
     }
   }
 
-
   useEffect(() => {
-    console.log("in use effect testing ")
+    console.log("in use effect testing ");
     getData();
-  },[]);
+  }, []);
 
   return (
     <div className="container my-2">
-      {error && <div className="alert alert-danger"> {error} </div>}
+      {error && <div className="alert alert-danger">{error}</div>}
       <div className="row">
         {data?.map((ele) => (
-          <div key={ele._id} className="col-4">
-            <div className="card">
-              <div className="card-body">
+          <div key={ele._id} className="col-sm-12 col-md-6 col-lg-4 my-2">
+            <div className="card h-100">
+              <div className="card-body d-flex flex-column">
                 <h5 className="card-title">{ele.name}</h5>
                 <h6 className="card-subtitle mb-2 text-muted">{ele.email}</h6>
                 <p className="card-text">{ele.about}</p>
-                <Link to= {`/${ele._id}`} className="btn btn-primary card-link">Edit</Link>
-                <span className="btn btn-danger card-link" onClick={() => handleDelete(ele._id)}>
-                  Delete
-                </span>
+                <div className="mt-auto">
+                  <Link to={`/${ele._id}`} className="btn btn-primary card-link">
+                    Edit
+                  </Link>
+                  <span
+                    className="btn btn-danger card-link"
+                    onClick={() => handleDelete(ele._id)}
+                  >
+                    Delete
+                  </span>
+                </div>
               </div>
             </div>
           </div>
